@@ -10,11 +10,12 @@ require 'core/database/Connection.php';
 require 'core/database/QueryBuilder.php';
 
 $app['database'] = new QueryBuilder(
-    Connection::make($app['config']['database']['local'])
+    Connection::make($app['config']['database']['zone'])
 );
 
 require 'controllers/PagesController.php';
 require 'controllers/UsersController.php';
+require 'controllers/TasksController.php';
 
 function view ( $name, $data = [] ) {
 
@@ -24,7 +25,7 @@ function view ( $name, $data = [] ) {
 
 }
 
-function redirect ( $path ) { 
+function redirect ( $path ) {
 
     header("Location: /{$path}");
 

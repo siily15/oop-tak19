@@ -19,18 +19,18 @@ class UsersController {
         $app['database']->insert('users', [
             'name' => $_POST['name'],
         ]);
-        
+
         return redirect('users');
     }
 
-    public function edit () {
+        public function edit () {
 
-        global $app;
+            global $app;
 
-        $user = $app['database']->selectById('users', $_GET['id']);
+            $user = $app['database']->selectById('users', $_GET['id']);
 
-        return view('edit-user', ['user' => $user]);
-    }
+            return view('edit-user', ['user' => $user]);
+        }
 
     public function update () {
 
@@ -48,8 +48,8 @@ class UsersController {
         global $app;
 
         $app['database']->delete('users', $_GET['id']);
-        
+
         return redirect('users');
-    }    
+    }
 
 }

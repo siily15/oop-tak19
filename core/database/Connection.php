@@ -12,8 +12,8 @@ class Connection {
                 $config['options']
             );
         } catch ( PDOException $e ) {
-            var_dump($e->message());
-            die('Viga: ei saa andmebaasiga ühendust!');
+            die($e->getMessage());
+            //die('Viga: ei saa andmebaasiga ühendust!');
         }
 
     }
